@@ -1,6 +1,4 @@
-/// Базовый интерфейс для провайдера магазина (реализуется внешним модулем).
-abstract class AppPayPlatform {
-  /// Stream сырых событий покупки (map), ядро замапит в PurchaseEvent.
+abstract interface class AppPayPlatform {
   Stream<Map<String, dynamic>> get purchaseStream;
 
   Future<void> init();
