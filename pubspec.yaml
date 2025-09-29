@@ -4,7 +4,7 @@ description: >
   Provides a unified API for Google Play, App Store, and RuStore billing
   through separate provider plugins. Includes entitlement management,
   server-side receipt verification hooks, and a simple extensible design.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/Kotelnikovekb/flutter_app_pay
 repository: https://github.com/Kotelnikovekb/flutter_app_pay
 issue_tracker: https://github.com/Kotelnikovekb/flutter_app_pay/issues
