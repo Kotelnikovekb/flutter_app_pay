@@ -11,7 +11,7 @@ import 'registry/provider_descriptor.dart';
 
 class AppPayClient {
   AppPayClient({
-    Set<ProviderToken>? providers,          // если null → все зарегистрированные
+    Set<ProviderToken>? providers,
     this.verifier,
     EntitlementStore? entitlements,
   })  : _tokens = providers,

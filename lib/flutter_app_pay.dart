@@ -1,12 +1,16 @@
 library flutter_app_pay;
 
-export 'src/app_pay_client.dart';
-export 'src/platform/app_pay_platform.dart';
-export 'src/registry/provider_descriptor.dart' show ProviderDescriptor, ProviderPlatform, ProviderToken;
-export 'src/registry/provider_registry.dart' show AppPayRegistry;
-export 'src/models/enums.dart';
-export 'src/models/product.dart';
-export 'src/models/purchase.dart';
-export 'src/models/entitlement.dart';
-export 'src/core/entitlement_store.dart';
-export 'src/core/verifier.dart';
+export 'src/app_pay_client.dart' show AppPayClient;
+
+export 'src/models/product.dart' show Product;
+export 'src/models/purchase.dart' show PurchaseEvent;
+export 'src/models/entitlement.dart' show EntitlementState;
+
+export 'src/core/entitlement_store.dart'
+    show EntitlementStore, InMemoryEntitlementStore;
+export 'src/core/verifier.dart'
+    show AppPayVerifier, VerificationResult, VerificationStatus;
+
+
+export 'package:flutter_app_pay_api/flutter_app_pay_api.dart'
+    show ProviderToken, ProductType;

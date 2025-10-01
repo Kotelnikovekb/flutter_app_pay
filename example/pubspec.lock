@@ -77,6 +77,14 @@ packages:
       relative: true
     source: path
     version: "0.0.2"
+  flutter_app_pay_api:
+    dependency: transitive
+    description:
+      name: flutter_app_pay_api
+      sha256: b2da2d7c0479f8ab2ec48f443faab9aa940c310ee8d3615a1710885c5566be01
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0"
   flutter_driver:
     dependency: transitive
     description: flutter
