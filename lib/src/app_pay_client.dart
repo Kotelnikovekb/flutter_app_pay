@@ -2,10 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import '../flutter_app_pay.dart';
-import 'core/entitlement_store.dart';
-import 'core/verifier.dart';
-import 'models/product.dart';
-import 'models/purchase.dart';
 import 'registry/provider_registry.dart';
 import 'package:flutter_app_pay_api/flutter_app_pay_api.dart' as api;
 
