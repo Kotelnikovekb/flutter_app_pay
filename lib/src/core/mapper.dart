@@ -1,4 +1,5 @@
-import '../models/enums.dart';
+import 'package:flutter_app_pay_api/flutter_app_pay_api.dart';
+
 import '../models/product.dart';
 import '../models/purchase.dart';
 
@@ -9,7 +10,6 @@ Product mapProduct(Map<String, dynamic> raw) {
     description: (raw['description'] as String?) ?? '',
     price: (raw['priceLabel'] as String?) ?? (raw['price'] as String?) ?? '',
     currencyCode: (raw['currency'] as String?) ?? '',
-    priceValue: (raw['priceValue'] as num?)?.toDouble() ?? 0.0,
     type: _typeFrom(raw['type'] as String?),
     storeId: raw['storeId'] as String,
     raw: raw,
@@ -28,17 +28,17 @@ PurchaseEvent mapPurchase(Map<String, dynamic> raw) {
 }
 
 ProductType _typeFrom(String? t) => switch (t) {
-  'consumable' => ProductType.consumable,
-  'subscription' => ProductType.subscription,
-  _ => ProductType.nonConsumable,
-};
+      'consumable' => ProductType.consumable,
+      'subscription' => ProductType.subscription,
+      _ => ProductType.nonConsumable,
+    };
 
-PurchaseStatusU _statusFrom(String? s) => switch (s) {
-  'pending' => PurchaseStatusU.pending,
-  'purchased' => PurchaseStatusU.purchased,
-  'restored' => PurchaseStatusU.restored,
-  'canceled' => PurchaseStatusU.canceled,
-  'expired' => PurchaseStatusU.expired,
-  'error' => PurchaseStatusU.error,
-  _ => PurchaseStatusU.error,
-};
+PurchaseStatus _statusFrom(String? s) => switch (s) {
+      'pending' => PurchaseStatus.pending,
+      'purchased' => PurchaseStatus.purchased,
+      'restored' => PurchaseStatus.restored,
+      'canceled' => PurchaseStatus.canceled,
+      'expired' => PurchaseStatus.expired,
+      'error' => PurchaseStatus.error,
+      _ => PurchaseStatus.error,
+    };

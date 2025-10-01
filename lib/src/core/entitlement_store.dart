@@ -1,6 +1,7 @@
+import 'package:flutter_app_pay_api/flutter_app_pay_api.dart';
+
 import '../models/entitlement.dart';
 import '../models/purchase.dart';
-import '../models/enums.dart';
 
 abstract class EntitlementStore {
   Future<EntitlementState> get(String key);
@@ -17,12 +18,12 @@ class InMemoryEntitlementStore implements EntitlementStore {
   @override
   void apply(PurchaseEvent e) {
     switch (e.status) {
-      case PurchaseStatusU.purchased:
-      case PurchaseStatusU.restored:
+      case PurchaseStatus.purchased:
+      case PurchaseStatus.restored:
         _map[e.productId] = EntitlementState(key: e.productId, isActive: true);
         break;
-      case PurchaseStatusU.canceled:
-      case PurchaseStatusU.expired:
+      case PurchaseStatus.canceled:
+      case PurchaseStatus.expired:
         _map[e.productId] = EntitlementState(key: e.productId, isActive: false);
         break;
       default:

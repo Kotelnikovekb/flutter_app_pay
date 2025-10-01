@@ -1,13 +1,14 @@
-import 'enums.dart';
+import 'package:flutter_app_pay_api/flutter_app_pay_api.dart';
+
 import '../core/verifier.dart';
 import 'package:flutter/foundation.dart';
 
 @immutable
 class PurchaseEvent {
-  final String storeId;         // 'pay.google' | 'pay.apple' | 'pay.rustore'
+  final String storeId;
   final String productId;
   final String transactionId;
-  final PurchaseStatusU status;
+  final PurchaseStatus status;
   final String? errorMessage;
   final Map<String, Object?> raw;
   final VerificationResult verification;

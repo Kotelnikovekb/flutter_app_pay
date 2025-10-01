@@ -11,6 +11,5 @@ export 'src/core/entitlement_store.dart'
 export 'src/core/verifier.dart'
     show AppPayVerifier, VerificationResult, VerificationStatus;
 
-
 export 'package:flutter_app_pay_api/flutter_app_pay_api.dart'
     show ProviderToken, ProductType;

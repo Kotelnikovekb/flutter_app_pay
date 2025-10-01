@@ -1,26 +1,34 @@
-import 'enums.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter_app_pay_api/flutter_app_pay_api.dart' as api;
 
-@immutable
 class Product {
   final String id;
   final String title;
   final String description;
-  final String price;        // локализованная строка
-  final String currencyCode; // 'EUR'
-  final double priceValue;   // 2.99
-  final ProductType type;
-  final String storeId;      // id провайдера из ProviderDescriptor.id
+  final String price;
+  final String currencyCode;
+  final api.ProductType type;   // <<< ВАЖНО: тип из api
+  final String storeId;
   final Map<String, Object?> raw;
+
   const Product({
     required this.id,
     required this.title,
     required this.description,
     required this.price,
     required this.currencyCode,
-    required this.priceValue,
     required this.type,
     required this.storeId,
     this.raw = const {},
   });
+
+  factory Product.fromDto(api.ProductDto d) => Product(
+    id: d.id,
+    title: d.title,
+    description: d.description,
+    price: d.priceLabel,
+    currencyCode: d.currencyCode ?? '',
+    type: d.type,
+    storeId: d.providerId,
+    raw: d.raw,
+  );
 }
