@@ -13,3 +13,4 @@ export 'src/core/verifier.dart'
 
 export 'package:flutter_app_pay_api/flutter_app_pay_api.dart'
     show ProviderToken, ProductType;
+export 'src/core/core_init.dart' show AppPayCore;
